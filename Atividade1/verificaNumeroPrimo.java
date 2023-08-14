@@ -14,7 +14,7 @@ public class verificaNumeroPrimo {
             }
         }
 
-        return 1; // Número é primo
+        return 1;
     }
 
     public static void main(String[] args) {
