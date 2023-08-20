@@ -15,12 +15,12 @@ public class Exercicio2 {
         if (escolha == 1) {
             System.out.print("Digite a temperatura em Celsius: ");
             double celsius = scanner.nextDouble();
-            double fahrenheit = celsiusToFahrenheit(celsius);
+            double fahrenheit = celsiusParaFahrenheit(celsius);
             System.out.println("Resultado em Fahrenheit: " + fahrenheit + " °F");
         } else if (escolha == 2) {
             System.out.print("Digite a temperatura em Fahrenheit: ");
             double fahrenheit = scanner.nextDouble();
-            double celsius = fahrenheitToCelsius(fahrenheit);
+            double celsius = fahrenheitParaCelsius(fahrenheit);
             System.out.println("Resultado em Celsius: " + celsius + " °C");
         } else {
             System.out.println("Escolha inválida. Encerrando o programa.");
@@ -29,11 +29,11 @@ public class Exercicio2 {
         scanner.close();
     }
 
-    public static double celsiusToFahrenheit(double celsius) {
+    public static double celsiusParaFahrenheit(double celsius) {
         return (celsius * 9 / 5) + 32;
     }
 
-    public static double fahrenheitToCelsius(double fahrenheit) {
+    public static double fahrenheitParaCelsius(double fahrenheit) {
         return (fahrenheit - 32) * 5 / 9;
     }
 }

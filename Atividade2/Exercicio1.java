@@ -29,10 +29,11 @@ public class Exercicio1 {
                 resultado = numero1 / numero2;
                 break;        
         }
-
+        scan.close();
         System.out.printf("Resultado: %d", resultado);
 
         
+
     }
 
 }
