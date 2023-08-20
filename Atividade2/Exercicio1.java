@@ -31,9 +31,6 @@ public class Exercicio1 {
         }
         scan.close();
         System.out.printf("Resultado: %d", resultado);
-
-        
-
     }
 
 }
