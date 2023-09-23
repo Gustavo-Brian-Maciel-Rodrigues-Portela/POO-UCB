@@ -162,4 +162,8 @@ public class aplicacao {
         System.out.print("Há pesquisas em andamento?");
         return inputBoolean(scanner);
     }
+
+    public static void visualizarFabricas() {
+        
+    }
 }

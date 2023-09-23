@@ -10,7 +10,12 @@ public class industria {
     protected String nomeProduto; 
     private int anoFundacao;    
 
-    public industria(String nome, String endereco, String cnpj, int anoFundacao) {
+    public industria(
+        String nome, 
+        String endereco, 
+        String cnpj, 
+        int anoFundacao
+    ) {
         this.nome = nome;
         this.endereco = endereco;
         this.cnpj = cnpj;
