@@ -54,6 +54,8 @@ public class aplicacao {
                     break;
                 case 2:
                     break;
+                case 3:
+                    break;
                 default:
                     System.out.println("Opção inválida!");
                     break;
@@ -97,6 +99,7 @@ public class aplicacao {
         System.out.println("O que você deseja fazer ?");
         System.out.println("(1) Adicionar uma indústria.");
         System.out.println("(2) Adicionar um produto a uma indústria.");
+        System.out.println("(3) Visualizar as fábricas e seus respectivos produtos.");
         System.out.print("Opção: ");
         return inputInt(scanner);
     }
