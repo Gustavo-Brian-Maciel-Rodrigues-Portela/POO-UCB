@@ -1,132 +1,146 @@
-package app;
-
 import industrias.industriaAlimenticia;
 import industrias.industriaAutomobilistica;
 import industrias.industriaFarmaceutica;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class aplicacao{
+public class aplicacao {
     public static void main(String[] args) {
-        
+        Scanner scanner = new Scanner(System.in); // Crie o Scanner uma vez no método main
+
         ArrayList<industriaAlimenticia> industriaAl = new ArrayList<>();
         ArrayList<industriaAutomobilistica> industriaAu = new ArrayList<>();
         ArrayList<industriaFarmaceutica> industriaFa = new ArrayList<>();
-        
 
-        while(true) {
-            switch(pergunta()) {
+        while (true) {
+            switch (pergunta(scanner)) {
                 case 1:
-                    switch(tipoIndustria()) {
+                    switch (tipoIndustria(scanner)) {
                         case 1:
-                            industriaAl.add(new industriaAlimenticia(adicionarNomeIndustria(), adicionarEnderecoIndustria(), adicionarCjpjIndustria(), adicionarAnoFundacao(), adicionarTipoProdutosAlimenticios(), adicionarUtilizaIngredientesOrganicos()));
+                            industriaAl.add(new industriaAlimenticia(
+                                    adicionarNomeIndustria(scanner),
+                                    adicionarEnderecoIndustria(scanner),
+                                    adicionarCjpjIndustria(scanner),
+                                    adicionarAnoFundacao(scanner),
+                                    adicionarTipoProdutosAlimenticios(scanner),
+                                    adicionarUtilizaIngredientesOrganicos(scanner)
+                            ));
                             break;
                         case 2:
-                            industriaAu.add(new industriaAutomobilistica(adicionarNomeIndustria(), adicionarEnderecoIndustria(), adicionarCjpjIndustria(), adicionarAnoFundacao(), adicionarTipoVeiculo(), adicionarFabricacaoCarrosEletricos()));
+                            industriaAu.add(new industriaAutomobilistica(
+                                    adicionarNomeIndustria(scanner),
+                                    adicionarEnderecoIndustria(scanner),
+                                    adicionarCjpjIndustria(scanner),
+                                    adicionarAnoFundacao(scanner),
+                                    adicionarTipoVeiculo(scanner),
+                                    adicionarFabricacaoCarrosEletricos(scanner)
+                            ));
                             break;
                         case 3:
-                            industriaFa.add(new industriaFarmaceutica(adicionarNomeIndustria(), adicionarEnderecoIndustria(), adicionarCjpjIndustria(), adicionarAnoFundacao(), AdicionarEspecialidadeFarmaceutica(), AdicionarPesquisaEmAndamento()));
+                            industriaFa.add(new industriaFarmaceutica(
+                                    adicionarNomeIndustria(scanner),
+                                    adicionarEnderecoIndustria(scanner),
+                                    adicionarCjpjIndustria(scanner),
+                                    adicionarAnoFundacao(scanner),
+                                    AdicionarEspecialidadeFarmaceutica(scanner),
+                                    AdicionarPesquisaEmAndamento(scanner)
+                            ));
                             break;
                         default:
-                            System.out.println("Opção inválida!");  
+                            System.out.println("Opção inválida!");
                             break;
                     }
                     break;
                 case 2:
                     break;
                 default:
-                    System.out.println("Opção inválida!");  
-                    break;  
+                    System.out.println("Opção inválida!");
+                    break;
             }
         }
-        
     }
 
-    public static int inputInt() {
-        Scanner scan = new Scanner(System.in);
+    public static int inputInt(Scanner scanner) {
         int resposta;
-        resposta = scan.nextInt();
-        scan.close();
+        resposta = scanner.nextInt();
         return resposta;
     }
 
-    public static String inputString() {
-        Scanner scan = new Scanner(System.in);
+    public static String inputString(Scanner scanner) {
         String resposta;
-        resposta = scan.nextLine();
-        scan.close();
+        resposta = scanner.nextLine();
         return resposta;
     }
 
-    public static boolean inputBoolean() {
+    public static boolean inputBoolean(Scanner scanner) {
         System.out.println("(1) Sim.");
         System.out.println("(2) Não.");
-        return (inputInt()==1)?true:false;
+        return (inputInt(scanner) == 1);
     }
 
-    public static int pergunta() {
+    public static int pergunta(Scanner scanner) {
         System.out.println("O que você deseja fazer ?");
-        System.out.println("(1) Adicionar uma industria.");
-        System.out.println("(2) Adicionar um produto a uma industria.");
+        System.out.println("(1) Adicionar uma indústria.");
+        System.out.println("(2) Adicionar um produto a uma indústria.");
         System.out.println("Opção: ");
-        return inputInt();
+        return inputInt(scanner);
     }
 
-    public static int tipoIndustria() {
-        System.out.println("Insira o tipo da industria.");
+    public static int tipoIndustria(Scanner scanner) {
+        System.out.println("Insira o tipo da indústria.");
         System.out.println("(1) Indústria alimentícia.");
         System.out.println("(2) Indústria automobilística.");
         System.out.println("(3) Indústria farmacêutica.");
-        return inputInt();
+        return inputInt(scanner);
     }
 
-    public static String adicionarNomeIndustria() {
+    public static String adicionarNomeIndustria(Scanner scanner) {
         System.out.println("Nome da indústria: ");
-        return inputString();
+        return inputString(scanner);
     }
 
-    public static String adicionarEnderecoIndustria() {
+    public static String adicionarEnderecoIndustria(Scanner scanner) {
         System.out.println("Endereço da indústria: ");
-        return inputString();
+        return inputString(scanner);
     }
 
-    public static String adicionarCjpjIndustria() {
+    public static String adicionarCjpjIndustria(Scanner scanner) {
         System.out.println("CJPJ: ");
-        return inputString();
+        return inputString(scanner);
     }
 
-    public static int adicionarAnoFundacao() {
+    public static int adicionarAnoFundacao(Scanner scanner) {
         System.out.println("Ano da fundação: ");
-        return inputInt();
+        return inputInt(scanner);
     }
 
-    public static String adicionarTipoProdutosAlimenticios() {
+    public static String adicionarTipoProdutosAlimenticios(Scanner scanner) {
         System.out.println("Tipo do produto alimentício: ");
-        return inputString();
+        return inputString(scanner);
     }
 
-    public static boolean adicionarUtilizaIngredientesOrganicos() {
+    public static boolean adicionarUtilizaIngredientesOrganicos(Scanner scanner) {
         System.out.println("Utiliza ingredientes orgânicos?");
-        return inputBoolean();
+        return inputBoolean(scanner);
     }
 
-    public static String adicionarTipoVeiculo() {
+    public static String adicionarTipoVeiculo(Scanner scanner) {
         System.out.println("Tipo do veículo: ");
-        return inputString();
+        return inputString(scanner);
     }
 
-    public static boolean adicionarFabricacaoCarrosEletricos() {
+    public static boolean adicionarFabricacaoCarrosEletricos(Scanner scanner) {
         System.out.println("Fabrica carros elétricos?");
-        return inputBoolean();
+        return inputBoolean(scanner);
     }
 
-    public static String AdicionarEspecialidadeFarmaceutica() {
+    public static String AdicionarEspecialidadeFarmaceutica(Scanner scanner) {
         System.out.println("Especialidade farmacêutica: ");
-        return inputString();
+        return inputString(scanner);
     }
 
-    public static boolean AdicionarPesquisaEmAndamento() {
+    public static boolean AdicionarPesquisaEmAndamento(Scanner scanner) {
         System.out.println("Há pesquisas em andamento?");
-        return inputBoolean();
+        return inputBoolean(scanner);
     }
 }
