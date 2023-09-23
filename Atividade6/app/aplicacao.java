@@ -6,7 +6,8 @@ import java.util.Scanner;
 
 public class aplicacao {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in); // Crie o Scanner uma vez no método main
+        limparTerminal();
+        Scanner scanner = new Scanner(System.in);
 
         ArrayList<industriaAlimenticia> industriaAl = new ArrayList<>();
         ArrayList<industriaAutomobilistica> industriaAu = new ArrayList<>();
@@ -71,6 +72,7 @@ public class aplicacao {
     public static int inputInt(Scanner scanner) {
         int resposta;
         resposta = scanner.nextInt();
+        scanner.nextLine();
         limparTerminal();
         return resposta;
     }
@@ -83,11 +85,12 @@ public class aplicacao {
     }
 
     public static boolean inputBoolean(Scanner scanner) {
-        System.out.println("(1) Sim.");
+        System.out.println("\n(1) Sim.");
         System.out.println("(2) Não.");
+        System.out.print("Opção: ");
         int resposta = inputInt(scanner);
         limparTerminal();
-        return ( resposta == 1);
+        return (resposta == 1);
     }
 
     public static int pergunta(Scanner scanner) {
@@ -108,53 +111,52 @@ public class aplicacao {
     }
 
     public static String adicionarNomeIndustria(Scanner scanner) {
-        System.out.println("Nome da indústria: ");
+        System.out.print("Nome da indústria: ");
         return inputString(scanner);
     }
 
     public static String adicionarEnderecoIndustria(Scanner scanner) {
-        System.out.println("Endereço da indústria: ");
+        System.out.print("Endereço da indústria: ");
         return inputString(scanner);
     }
 
     public static String adicionarCjpjIndustria(Scanner scanner) {
-        System.out.println("CJPJ: ");
+        System.out.print("CJPJ: ");
         return inputString(scanner);
     }
 
     public static int adicionarAnoFundacao(Scanner scanner) {
-        System.out.println("Ano da fundação: ");
+        System.out.print("Ano da fundação: ");
         return inputInt(scanner);
     }
 
     public static String adicionarTipoProdutosAlimenticios(Scanner scanner) {
-        System.out.println("Tipo do produto alimentício: ");
+        System.out.print("Tipo do produto alimentício: ");
         return inputString(scanner);
     }
 
     public static boolean adicionarUtilizaIngredientesOrganicos(Scanner scanner) {
-        System.out.println("Utiliza ingredientes orgânicos?");
+        System.out.print("Utiliza ingredientes orgânicos?");
         return inputBoolean(scanner);
     }
 
     public static String adicionarTipoVeiculo(Scanner scanner) {
-        System.out.println("Tipo do veículo: ");
+        System.out.print("Tipo do veículo: ");
         return inputString(scanner);
     }
 
     public static boolean adicionarFabricacaoCarrosEletricos(Scanner scanner) {
-        System.out.println("Fabrica carros elétricos?");
+        System.out.print("Fabrica carros elétricos?");
         return inputBoolean(scanner);
     }
 
     public static String AdicionarEspecialidadeFarmaceutica(Scanner scanner) {
-        System.out.println("Especialidade farmacêutica: ");
+        System.out.print("Especialidade farmacêutica: ");
         return inputString(scanner);
     }
 
     public static boolean AdicionarPesquisaEmAndamento(Scanner scanner) {
-        System.out.println("Há pesquisas em andamento?");
+        System.out.print("Há pesquisas em andamento?");
         return inputBoolean(scanner);
     }
-
 }
