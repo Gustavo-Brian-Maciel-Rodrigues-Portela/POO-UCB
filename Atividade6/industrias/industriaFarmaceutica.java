@@ -1,12 +1,13 @@
 package industrias;
+import produtos.produtoFarmaceutico;
 
 public class industriaFarmaceutica extends industria{
     private String especialidadeFarmaceutica;
     private boolean pesquisaEmAndamento;
 
-    public industriaFarmaceutica(String nomeProduto, String endereco, String cnpj, int numeroFuncionarios,
+    public industriaFarmaceutica(String nome, String endereco, String cnpj, int anoFundacao,
     String especialidadeFarmaceutica, boolean pesquisaEmAndamento) {
-        super(nomeProduto, endereco, cnpj, numeroFuncionarios);
+        super(nome, endereco, cnpj, anoFundacao);
         this.especialidadeFarmaceutica = especialidadeFarmaceutica;
         this.pesquisaEmAndamento = pesquisaEmAndamento;
     }

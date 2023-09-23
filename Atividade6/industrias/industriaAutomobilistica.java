@@ -1,13 +1,14 @@
 package industrias;
+import produtos.produtoAutomobilistico;
 
 public class industriaAutomobilistica extends industria{
-    private int numeroModelos;
+    private String tipoVeiculo;
     private boolean fabricacaoCarrosEletricos;
     
-    public industriaAutomobilistica(String nomeProduto, String endereco, String cnpj, int numeroFuncionarios,
-    int numeroModelos, boolean fabricacaoCarrosEletricos) {
-        super(nomeProduto, endereco, cnpj, numeroFuncionarios);
-        this.numeroModelos = numeroModelos;
+    public industriaAutomobilistica(String nome, String endereco, String cnpj, int anoFundacao,
+    String tipoVeiculo, boolean fabricacaoCarrosEletricos) {
+        super(nome, endereco, cnpj, anoFundacao);
+        this.tipoVeiculo = tipoVeiculo;
         this.fabricacaoCarrosEletricos = fabricacaoCarrosEletricos;
     }
 }
