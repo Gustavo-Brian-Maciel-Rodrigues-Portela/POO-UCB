@@ -60,29 +60,41 @@ public class aplicacao {
         }
     }
 
+    public static void limparTerminal() {
+        try {
+            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static int inputInt(Scanner scanner) {
         int resposta;
         resposta = scanner.nextInt();
+        limparTerminal();
         return resposta;
     }
 
     public static String inputString(Scanner scanner) {
         String resposta;
         resposta = scanner.nextLine();
+        limparTerminal();
         return resposta;
     }
 
     public static boolean inputBoolean(Scanner scanner) {
         System.out.println("(1) Sim.");
         System.out.println("(2) Não.");
-        return (inputInt(scanner) == 1);
+        int resposta = inputInt(scanner);
+        limparTerminal();
+        return ( resposta == 1);
     }
 
     public static int pergunta(Scanner scanner) {
         System.out.println("O que você deseja fazer ?");
         System.out.println("(1) Adicionar uma indústria.");
         System.out.println("(2) Adicionar um produto a uma indústria.");
-        System.out.println("Opção: ");
+        System.out.print("Opção: ");
         return inputInt(scanner);
     }
 
@@ -91,6 +103,7 @@ public class aplicacao {
         System.out.println("(1) Indústria alimentícia.");
         System.out.println("(2) Indústria automobilística.");
         System.out.println("(3) Indústria farmacêutica.");
+        System.out.print("Opção: ");
         return inputInt(scanner);
     }
 
@@ -143,4 +156,5 @@ public class aplicacao {
         System.out.println("Há pesquisas em andamento?");
         return inputBoolean(scanner);
     }
+
 }

@@ -11,4 +11,21 @@ public class industriaAlimenticia extends industria{
         this.tipoProdutosAlimenticios = tipoProdutosAlimenticios;
         this.utilizaIngredientesOrgânicos = utilizaIngredientesOrgânicos;
     }   
+
+    public String getTipoProdutosAlimenticios() {
+        return this.tipoProdutosAlimenticios;
+    }
+
+    public void setTipoProdutosAlimenticios(String tipoProdutosAlimenticios) {
+        this.tipoProdutosAlimenticios = tipoProdutosAlimenticios;
+    }
+
+    public boolean getUtilizaIngredientesOrgânicos() {
+        return this.utilizaIngredientesOrgânicos;
+    }
+
+    public void setUtilizaIngredientesOrgânicos(boolean utilizaIngredientesOrgânicos) {
+        this.utilizaIngredientesOrgânicos = utilizaIngredientesOrgânicos;
+    }
+
 }
