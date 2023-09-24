@@ -21,7 +21,7 @@ public class aplicacao {
                             industriaAl.add(new industriaAlimenticia(
                                     adicionarNomeIndustria(scanner),
                                     adicionarEnderecoIndustria(scanner),
-                                    adicionarCjpjIndustria(scanner),
+                                    adicionarCnpjIndustria(scanner),
                                     adicionarAnoFundacao(scanner),
                                     adicionarTipoProdutosAlimenticios(scanner),
                                     adicionarUtilizaIngredientesOrganicos(scanner)
@@ -31,7 +31,7 @@ public class aplicacao {
                             industriaAu.add(new industriaAutomobilistica(
                                     adicionarNomeIndustria(scanner),
                                     adicionarEnderecoIndustria(scanner),
-                                    adicionarCjpjIndustria(scanner),
+                                    adicionarCnpjIndustria(scanner),
                                     adicionarAnoFundacao(scanner),
                                     adicionarTipoVeiculo(scanner),
                                     adicionarFabricacaoCarrosEletricos(scanner)
@@ -41,7 +41,7 @@ public class aplicacao {
                             industriaFa.add(new industriaFarmaceutica(
                                     adicionarNomeIndustria(scanner),
                                     adicionarEnderecoIndustria(scanner),
-                                    adicionarCjpjIndustria(scanner),
+                                    adicionarCnpjIndustria(scanner),
                                     adicionarAnoFundacao(scanner),
                                     AdicionarEspecialidadeFarmaceutica(scanner),
                                     AdicionarPesquisaEmAndamento(scanner)
@@ -143,7 +143,7 @@ public class aplicacao {
         return inputString(scanner);
     }
 
-    public static String adicionarCjpjIndustria(Scanner scanner) {
+    public static String adicionarCnpjIndustria(Scanner scanner) {
         System.out.print("CNPJ: ");
         return inputString(scanner);
     }
@@ -206,6 +206,7 @@ public class aplicacao {
             System.out.println("Index: "+contador+"| Indústria: "+industriaFarmaceutica.getNome());
             contador++;
         }
+        System.out.print("\n");
     }
 
     public static void adicionarProduto(
