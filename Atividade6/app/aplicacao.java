@@ -81,6 +81,14 @@ public class aplicacao {
         return resposta;
     }
 
+    public static double inputDouble(Scanner scanner) {
+        double resposta;
+        resposta = scanner.nextDouble();
+        scanner.nextLine();
+        limparTerminal();
+        return resposta;
+    }
+
     public static String inputString(Scanner scanner) {
         String resposta;
         resposta = scanner.nextLine();
@@ -126,7 +134,7 @@ public class aplicacao {
     }
 
     public static String adicionarCjpjIndustria(Scanner scanner) {
-        System.out.print("CJPJ: ");
+        System.out.print("CNPJ: ");
         return inputString(scanner);
     }
 
@@ -166,27 +174,95 @@ public class aplicacao {
     }
 
     public static void mostrarIndustrias(
-            ArrayList <industriaAlimenticia> industriaAlimenticias,
-            ArrayList <industriaAutomobilistica> industriaAutomobilisticas,
-            ArrayList <industriaFarmaceutica> industriaFarmaceuticas
+            ArrayList <industriaAlimenticia> industriasAlimenticias,
+            ArrayList <industriaAutomobilistica> industriasAutomobilisticas,
+            ArrayList <industriaFarmaceutica> industriasFarmaceuticas
     ) {
         int contador=0;
-        for (industriaAlimenticia industriaAlimenticia : industriaAlimenticias) {
-            System.out.println(industriaAlimenticia.getNome()+" "+industriaAlimenticia.nomeclatura+" Indústria-----: "+contador);
+        System.out.println("(1) "+industriaAlimenticia.nomeclatura+"\n");
+        for (industriaAlimenticia industriaAlimenticia : industriasAlimenticias) {
+            System.out.println(industriaAlimenticia.getNome()+" Index-----: "+contador);
             contador++;
         }   
         contador = 0;
-        System.out.println("\n");
-        for(industriaAutomobilistica industriaAutomobilistica : industriaAutomobilisticas) {
-            System.out.println(industriaAutomobilistica.getNome()+" "+industriaAutomobilistica.nomeclatura+" Indústria-: "+contador);
+        System.out.println("\n(2) "+industriaAutomobilistica.nomeclatura+"\n");
+        for(industriaAutomobilistica industriaAutomobilistica : industriasAutomobilisticas) {
+            System.out.println(industriaAutomobilistica.getNome()+" Index-: "+contador);
             contador++;
         }
-        System.out.println("\n");
+        System.out.println("\n(3) "+industriaFarmaceutica.nomeclatura+"\n");
         contador = 0;
-        for (industriaFarmaceutica industriaFarmaceutica : industriaFarmaceuticas) {
-            System.out.println(industriaFarmaceutica.getNome()+" "+industriaFarmaceutica.nomeclatura+" Indústria----: "+contador);
+        for (industriaFarmaceutica industriaFarmaceutica : industriasFarmaceuticas) {
+            System.out.println(industriaFarmaceutica.getNome()+" Index----: "+contador);
             contador++;
         }
+    }
+
+    public static void adicionarProduto(
+        Scanner scanner,
+        ArrayList <industriaAlimenticia> industriasAlimenticias,
+        ArrayList <industriaAutomobilistica> industriasAutomobilisticas,
+        ArrayList <industriaFarmaceutica> industriasFarmaceuticas    
+    ) {
+        System.out.println("Insira o número que vem antes do nome do agrupamento das indústrias: ");
+        int agrupamento = inputInt(scanner);
+        System.out.println("Insira o index da indústria selecionada: ");
+        int index = inputInt(scanner);
+        System.out.println("Insira o nome do produto: ");
+        String nome = inputString(scanner);
+        System.out.println("Insira o descrição do produto: ");
+        String descricao = inputString(scanner);
+        System.out.println("Insira o preço do produto: ");
+        double preco = inputDouble(scanner);
+        System.out.println("Insira a quantidade em estoque: ");
+        int quantidadeEmEstoque = inputInt(scanner);
+        System.out.println("insira a categoria: ");
+        String categoria = inputString(scanner);
+        System.out.println("Insira o fabricante: ");
+        String fabricante = inputString(scanner);
+
+        switch(agrupamento) {
+            case 1:
+                industriasAlimenticias.get(index).criarProduto(
+                    nome,
+                    descricao, 
+                    preco, 
+                    quantidadeEmEstoque, 
+                    categoria, 
+                    fabricante
+                );
+                break;
+            case 2:
+                System.out.println("Insira o modelo: ");
+                String modelo = inputString(scanner);
+                System.out.println("Insira a marca: ");
+                String marca = inputString(scanner);
+                industriasAutomobilisticas.get(index).criarProduto(
+                    nome,
+                    descricao, 
+                    preco, 
+                    quantidadeEmEstoque, 
+                    categoria, 
+                    fabricante,
+                    modelo,
+                    marca
+                );
+                break;
+            case 3:
+                industriasFarmaceuticas.get(index).criarProduto(
+                    nome,
+                    descricao, 
+                    preco, 
+                    quantidadeEmEstoque, 
+                    categoria, 
+                    fabricante
+                );
+                break;
+            default:
+                System.out.println("Opção inválida!");
+                break; 
+        }
+
     }
 
 }
