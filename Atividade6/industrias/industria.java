@@ -1,5 +1,4 @@
 package industrias;
-import java.util.Objects;
 
 public class industria {
     private String nome;

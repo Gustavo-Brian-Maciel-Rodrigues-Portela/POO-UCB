@@ -13,10 +13,10 @@ public class aplicacao {
         ArrayList<industriaAutomobilistica> industriaAu = new ArrayList<>();
         ArrayList<industriaFarmaceutica> industriaFa = new ArrayList<>();
 
-        while (true) {
-            switch (pergunta(scanner)) {
+        while(true) {
+            switch(pergunta(scanner)) {
                 case 1:
-                    switch (tipoIndustria(scanner)) {
+                    switch(tipoIndustria(scanner)) {
                         case 1:
                             industriaAl.add(new industriaAlimenticia(
                                     adicionarNomeIndustria(scanner),
@@ -53,6 +53,8 @@ public class aplicacao {
                     }
                     break;
                 case 2:
+                    mostrarIndustrias(industriaAl,industriaAu,industriaFa);
+                    inputInt(scanner);
                     break;
                 case 3:
                     break;
@@ -99,7 +101,7 @@ public class aplicacao {
         System.out.println("O que você deseja fazer ?");
         System.out.println("(1) Adicionar uma indústria.");
         System.out.println("(2) Adicionar um produto a uma indústria.");
-        System.out.println("(3) Visualizar as fábricas e seus respectivos produtos.");
+        System.out.println("(3) Visualizar as indústrias e seus respectivos produtos.");
         System.out.print("Opção: ");
         return inputInt(scanner);
     }
@@ -163,7 +165,28 @@ public class aplicacao {
         return inputBoolean(scanner);
     }
 
-    public static void visualizarFabricas() {
-        
+    public static void mostrarIndustrias(
+            ArrayList <industriaAlimenticia> industriaAlimenticias,
+            ArrayList <industriaAutomobilistica> industriaAutomobilisticas,
+            ArrayList <industriaFarmaceutica> industriaFarmaceuticas
+    ) {
+        int contador=0;
+        for (industriaAlimenticia industriaAlimenticia : industriaAlimenticias) {
+            System.out.println(industriaAlimenticia.getNome()+" "+industriaAlimenticia.nomeclatura+" Indústria-----: "+contador);
+            contador++;
+        }   
+        contador = 0;
+        System.out.println("\n");
+        for(industriaAutomobilistica industriaAutomobilistica : industriaAutomobilisticas) {
+            System.out.println(industriaAutomobilistica.getNome()+" "+industriaAutomobilistica.nomeclatura+" Indústria-: "+contador);
+            contador++;
+        }
+        System.out.println("\n");
+        contador = 0;
+        for (industriaFarmaceutica industriaFarmaceutica : industriaFarmaceuticas) {
+            System.out.println(industriaFarmaceutica.getNome()+" "+industriaFarmaceutica.nomeclatura+" Indústria----: "+contador);
+            contador++;
+        }
     }
+
 }

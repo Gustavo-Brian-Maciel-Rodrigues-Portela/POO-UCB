@@ -3,7 +3,7 @@ package produtos;
 public class produtoAlimenticio extends produto{
     private String dataValidade;
     private String codigoBarras;
-    
+
     public produtoAlimenticio(
         String nome,
         String descricao, 
@@ -12,7 +12,14 @@ public class produtoAlimenticio extends produto{
         String categoria,
         String fabricante
     ) {
-        super(nome, descricao, preco, quantidadeEmEstoque, categoria, fabricante);
+        super(
+            nome, 
+            descricao, 
+            preco, 
+            quantidadeEmEstoque, 
+            categoria, 
+            fabricante
+        );
     }
 
     public String getDataValidade() {

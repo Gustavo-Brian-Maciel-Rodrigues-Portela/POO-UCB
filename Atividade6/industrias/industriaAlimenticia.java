@@ -1,9 +1,12 @@
 package industrias;
-import produtos.produtoAlimenticio;;
+import produtos.produtoAlimenticio;
+import java.util.ArrayList;
 
 public class industriaAlimenticia extends industria{
     private String tipoProdutosAlimenticios;
     private boolean utilizaIngredientesOrgânicos;
+    ArrayList<produtoAlimenticio> produtosAlimenticios;
+    public final static String nomeclatura ="indústria Alimentícia";
 
     public industriaAlimenticia(
         String nome, 
@@ -13,10 +16,15 @@ public class industriaAlimenticia extends industria{
         String tipoProdutosAlimenticios, 
         boolean utilizaIngredientesOrganicos
     ) {
-        super(nome, endereco, cnpj, anoFundacao);
+        super(
+            nome, 
+            endereco, 
+            cnpj, 
+            anoFundacao
+        );
         this.tipoProdutosAlimenticios = tipoProdutosAlimenticios;
         this.utilizaIngredientesOrgânicos = utilizaIngredientesOrgânicos;
-    }   
+    }
 
     public String getTipoProdutosAlimenticios() {
         return this.tipoProdutosAlimenticios;
@@ -32,6 +40,24 @@ public class industriaAlimenticia extends industria{
 
     public void setUtilizaIngredientesOrgânicos(boolean utilizaIngredientesOrgânicos) {
         this.utilizaIngredientesOrgânicos = utilizaIngredientesOrgânicos;
+    }
+
+    public void criarProduto(
+        String nome,
+        String descricao, 
+        double preco, 
+        int quantidadeEmEstoque,
+        String categoria,
+        String fabricante
+    ) {
+        produtosAlimenticios.add(new produtoAlimenticio(
+            nome,
+            descricao,
+            preco,
+            quantidadeEmEstoque,
+            categoria,
+            fabricante
+        ));
     }
 
 }

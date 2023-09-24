@@ -3,7 +3,7 @@ package produtos;
 public class produtoAutomobilistico extends produto{
     private String modelo;
     private String marca;
-    
+
     public produtoAutomobilistico(
         String nome,
         String descricao, 
@@ -14,7 +14,14 @@ public class produtoAutomobilistico extends produto{
         String modelo,
         String marca
     ) {
-        super(nome, descricao, preco, quantidadeEmEstoque, categoria, fabricante);
+        super(
+            nome, 
+            descricao, 
+            preco, 
+            quantidadeEmEstoque, 
+            categoria, 
+            fabricante
+        );
     }
 
     public String getModelo() {

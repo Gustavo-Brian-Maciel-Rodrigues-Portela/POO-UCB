@@ -1,9 +1,12 @@
 package industrias;
 import produtos.produtoAutomobilistico;
+import java.util.ArrayList;
 
 public class industriaAutomobilistica extends industria{
     private String tipoVeiculo;
     private boolean fabricacaoCarrosEletricos;
+    private ArrayList<produtoAutomobilistico> produtosAutomobilisticos;
+    public final static String nomeclatura ="indústria Automobilística";
     
     public industriaAutomobilistica(
         String nome, 
@@ -13,7 +16,12 @@ public class industriaAutomobilistica extends industria{
         String tipoVeiculo, 
         boolean fabricacaoCarrosEletricos
     ) {
-        super(nome, endereco, cnpj, anoFundacao);
+        super(
+            nome, 
+            endereco, 
+            cnpj, 
+            anoFundacao
+        );
         this.tipoVeiculo = tipoVeiculo;
         this.fabricacaoCarrosEletricos = fabricacaoCarrosEletricos;
     }
@@ -32,6 +40,28 @@ public class industriaAutomobilistica extends industria{
 
     public void setFabricacaoCarrosEletricos(boolean fabricacaoCarrosEletricos) {
         this.fabricacaoCarrosEletricos = fabricacaoCarrosEletricos;
+    }
+
+    public void criarProduto(
+        String nome,
+        String descricao, 
+        double preco, 
+        int quantidadeEmEstoque,
+        String categoria,
+        String fabricante,
+        String modelo,
+        String marca
+    ) {
+        produtosAutomobilisticos.add(new produtoAutomobilistico(
+            nome, 
+            descricao, 
+            preco, 
+            quantidadeEmEstoque, 
+            categoria, 
+            fabricante, 
+            modelo, 
+            marca
+        ));
     }
 
 }
