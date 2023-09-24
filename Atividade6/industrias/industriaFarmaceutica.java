@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class industriaFarmaceutica extends industria{
     private String especialidadeFarmaceutica;
     private boolean pesquisaEmAndamento;
-    private ArrayList<produtoFarmaceutico> produtosFarmaceuticos;
+    public ArrayList<produtoFarmaceutico> produtosFarmaceuticos;
     public final static String nomeclatura ="indústria Farmacêutica";
 
     public industriaFarmaceutica(

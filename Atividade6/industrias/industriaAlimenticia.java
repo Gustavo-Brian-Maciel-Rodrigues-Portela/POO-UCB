@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class industriaAlimenticia extends industria{
     private String tipoProdutosAlimenticios;
     private boolean utilizaIngredientesOrgânicos;
-    ArrayList<produtoAlimenticio> produtosAlimenticios;
+    public ArrayList<produtoAlimenticio> produtosAlimenticios;
     public final static String nomeclatura ="indústria Alimentícia";
 
     public industriaAlimenticia(

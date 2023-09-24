@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class industriaAutomobilistica extends industria{
     private String tipoVeiculo;
     private boolean fabricacaoCarrosEletricos;
-    private ArrayList<produtoAutomobilistico> produtosAutomobilisticos;
+    public ArrayList<produtoAutomobilistico> produtosAutomobilisticos;
     public final static String nomeclatura ="indústria Automobilística";
     
     public industriaAutomobilistica(
