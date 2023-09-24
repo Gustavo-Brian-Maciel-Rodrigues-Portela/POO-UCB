@@ -54,7 +54,8 @@ public class aplicacao {
                     break;
                 case 2:
                     mostrarIndustrias(industriaAl,industriaAu,industriaFa);
-                    inputInt(scanner);
+                    adicionarProduto(scanner, industriaAl, industriaAu, industriaFa);
+                    limparTerminal();
                     break;
                 case 3:
                     break;
@@ -181,19 +182,19 @@ public class aplicacao {
         int contador=0;
         System.out.println("(1) "+industriaAlimenticia.nomeclatura+"\n");
         for (industriaAlimenticia industriaAlimenticia : industriasAlimenticias) {
-            System.out.println(industriaAlimenticia.getNome()+" Index-----: "+contador);
+            System.out.println("Index: "+contador+"| Indústria: "+industriaAlimenticia.getNome());
             contador++;
         }   
         contador = 0;
         System.out.println("\n(2) "+industriaAutomobilistica.nomeclatura+"\n");
         for(industriaAutomobilistica industriaAutomobilistica : industriasAutomobilisticas) {
-            System.out.println(industriaAutomobilistica.getNome()+" Index-: "+contador);
+            System.out.println("Index: "+contador+"| Indústria: "+industriaAutomobilistica.getNome());
             contador++;
         }
         System.out.println("\n(3) "+industriaFarmaceutica.nomeclatura+"\n");
         contador = 0;
         for (industriaFarmaceutica industriaFarmaceutica : industriasFarmaceuticas) {
-            System.out.println(industriaFarmaceutica.getNome()+" Index----: "+contador);
+            System.out.println("Index: "+contador+"| Indústria: "+industriaFarmaceutica.getNome());
             contador++;
         }
     }
@@ -204,22 +205,30 @@ public class aplicacao {
         ArrayList <industriaAutomobilistica> industriasAutomobilisticas,
         ArrayList <industriaFarmaceutica> industriasFarmaceuticas    
     ) {
-        System.out.println("Insira o número que vem antes do nome do agrupamento das indústrias: ");
+        System.out.print("\n\nInsira o número que vem antes do nome do agrupamento das indústrias selecionado: ");
         int agrupamento = inputInt(scanner);
-        System.out.println("Insira o index da indústria selecionada: ");
+        mostrarIndustrias(industriasAlimenticias, industriasAutomobilisticas, industriasFarmaceuticas);
+        System.out.print("\nInsira o index da indústria selecionada: ");
         int index = inputInt(scanner);
-        System.out.println("Insira o nome do produto: ");
+        mostrarIndustrias(industriasAlimenticias, industriasAutomobilisticas, industriasFarmaceuticas);
+        System.out.print("\nInsira o nome do produto: ");
         String nome = inputString(scanner);
-        System.out.println("Insira o descrição do produto: ");
+        mostrarIndustrias(industriasAlimenticias, industriasAutomobilisticas, industriasFarmaceuticas);
+        System.out.print("\nInsira o descrição do produto: ");
         String descricao = inputString(scanner);
-        System.out.println("Insira o preço do produto: ");
+        mostrarIndustrias(industriasAlimenticias, industriasAutomobilisticas, industriasFarmaceuticas);
+        System.out.print("\nInsira o preço do produto: ");
         double preco = inputDouble(scanner);
-        System.out.println("Insira a quantidade em estoque: ");
+        mostrarIndustrias(industriasAlimenticias, industriasAutomobilisticas, industriasFarmaceuticas);
+        System.out.print("\nInsira a quantidade em estoque: ");
         int quantidadeEmEstoque = inputInt(scanner);
-        System.out.println("insira a categoria: ");
+        mostrarIndustrias(industriasAlimenticias, industriasAutomobilisticas, industriasFarmaceuticas);
+        System.out.print("\ninsira a categoria: ");
         String categoria = inputString(scanner);
-        System.out.println("Insira o fabricante: ");
+        mostrarIndustrias(industriasAlimenticias, industriasAutomobilisticas, industriasFarmaceuticas);
+        System.out.print("\nInsira o fabricante: ");
         String fabricante = inputString(scanner);
+        mostrarIndustrias(industriasAlimenticias, industriasAutomobilisticas, industriasFarmaceuticas);
 
         switch(agrupamento) {
             case 1:

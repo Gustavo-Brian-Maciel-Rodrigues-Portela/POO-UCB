@@ -24,6 +24,7 @@ public class industriaAutomobilistica extends industria{
         );
         this.tipoVeiculo = tipoVeiculo;
         this.fabricacaoCarrosEletricos = fabricacaoCarrosEletricos;
+        this.produtosAutomobilisticos = new ArrayList<>();
     }
 
     public String getTipoVeiculo() {

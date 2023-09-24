@@ -24,6 +24,7 @@ public class industriaAlimenticia extends industria{
         );
         this.tipoProdutosAlimenticios = tipoProdutosAlimenticios;
         this.utilizaIngredientesOrgânicos = utilizaIngredientesOrgânicos;
+        this.produtosAlimenticios = new ArrayList<>();
     }
 
     public String getTipoProdutosAlimenticios() {

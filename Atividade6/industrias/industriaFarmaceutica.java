@@ -24,6 +24,7 @@ public class industriaFarmaceutica extends industria{
         );
         this.especialidadeFarmaceutica = especialidadeFarmaceutica;
         this.pesquisaEmAndamento = pesquisaEmAndamento;
+        this.produtosFarmaceuticos = new ArrayList<>();
     }
 
     public String getEspecialidadeFarmaceutica() {
