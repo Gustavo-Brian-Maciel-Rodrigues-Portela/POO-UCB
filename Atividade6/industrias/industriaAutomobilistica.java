@@ -1,14 +1,14 @@
 package industrias;
-import produtos.produtoAutomobilistico;
+import produtos.ProdutoAutomobilistico;
 import java.util.ArrayList;
 
-public class industriaAutomobilistica extends industria{
+public class IndustriaAutomobilistica extends Industria{
     private String tipoVeiculo;
     private boolean fabricacaoCarrosEletricos;
-    public ArrayList<produtoAutomobilistico> produtosAutomobilisticos;
+    public ArrayList<ProdutoAutomobilistico> produtosAutomobilisticos;
     public final static String nomeclatura ="indústria Automobilística";
     
-    public industriaAutomobilistica(
+    public IndustriaAutomobilistica(
         String nome, 
         String endereco, 
         String cnpj, 
@@ -53,7 +53,7 @@ public class industriaAutomobilistica extends industria{
         String modelo,
         String marca
     ) {
-        produtosAutomobilisticos.add(new produtoAutomobilistico(
+        produtosAutomobilisticos.add(new ProdutoAutomobilistico(
             nome, 
             descricao, 
             preco, 

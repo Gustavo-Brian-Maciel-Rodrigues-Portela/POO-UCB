@@ -1,10 +1,10 @@
 package produtos;
 
-public class produtoAlimenticio extends produto{
+public class ProdutoAlimenticio extends Produto{
     private String dataValidade;
     private String codigoBarras;
 
-    public produtoAlimenticio(
+    public ProdutoAlimenticio(
         String nome,
         String descricao, 
         double preco, 

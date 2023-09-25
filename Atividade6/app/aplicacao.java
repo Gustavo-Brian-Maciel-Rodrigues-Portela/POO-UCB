@@ -1,24 +1,24 @@
-import industrias.industriaAlimenticia;
-import industrias.industriaAutomobilistica;
-import industrias.industriaFarmaceutica;
+import industrias.IndustriaAlimenticia;
+import industrias.IndustriaAutomobilistica;
+import industrias.IndustriaFarmaceutica;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class aplicacao {
+public class Aplicacao {
     public static void main(String[] args) {
         limparTerminal();
         Scanner scanner = new Scanner(System.in);
 
-        ArrayList<industriaAlimenticia> industriaAl = new ArrayList<>();
-        ArrayList<industriaAutomobilistica> industriaAu = new ArrayList<>();
-        ArrayList<industriaFarmaceutica> industriaFa = new ArrayList<>();
+        ArrayList<IndustriaAlimenticia> industriaAl = new ArrayList<>();
+        ArrayList<IndustriaAutomobilistica> industriaAu = new ArrayList<>();
+        ArrayList<IndustriaFarmaceutica> industriaFa = new ArrayList<>();
 
         while(true) {
             switch(pergunta(scanner)) {
                 case 1:
                     switch(tipoIndustria(scanner)) {
                         case 1:
-                            industriaAl.add(new industriaAlimenticia(
+                            industriaAl.add(new IndustriaAlimenticia(
                                     adicionarNomeIndustria(scanner),
                                     adicionarEnderecoIndustria(scanner),
                                     adicionarCnpjIndustria(scanner),
@@ -28,7 +28,7 @@ public class aplicacao {
                             ));
                             break;
                         case 2:
-                            industriaAu.add(new industriaAutomobilistica(
+                            industriaAu.add(new IndustriaAutomobilistica(
                                     adicionarNomeIndustria(scanner),
                                     adicionarEnderecoIndustria(scanner),
                                     adicionarCnpjIndustria(scanner),
@@ -38,7 +38,7 @@ public class aplicacao {
                             ));
                             break;
                         case 3:
-                            industriaFa.add(new industriaFarmaceutica(
+                            industriaFa.add(new IndustriaFarmaceutica(
                                     adicionarNomeIndustria(scanner),
                                     adicionarEnderecoIndustria(scanner),
                                     adicionarCnpjIndustria(scanner),
@@ -184,25 +184,25 @@ public class aplicacao {
     }
 
     public static void mostrarIndustrias(
-            ArrayList <industriaAlimenticia> industriasAlimenticias,
-            ArrayList <industriaAutomobilistica> industriasAutomobilisticas,
-            ArrayList <industriaFarmaceutica> industriasFarmaceuticas
+            ArrayList <IndustriaAlimenticia> industriasAlimenticias,
+            ArrayList <IndustriaAutomobilistica> industriasAutomobilisticas,
+            ArrayList <IndustriaFarmaceutica> industriasFarmaceuticas
     ) {
         int contador=0;
-        System.out.println("(1) " + industriaAlimenticia.nomeclatura + "\n");
-        for (industriaAlimenticia industriaAlimenticia : industriasAlimenticias) {
+        System.out.println("(1) " + IndustriaAlimenticia.nomeclatura + "\n");
+        for (IndustriaAlimenticia industriaAlimenticia : industriasAlimenticias) {
             System.out.println("Index: "+contador+"| Indústria: "+industriaAlimenticia.getNome());
             contador++;
         }   
         contador = 0;
-        System.out.println("\n(2) " + industriaAutomobilistica.nomeclatura+"\n");
-        for(industriaAutomobilistica industriaAutomobilistica : industriasAutomobilisticas) {
+        System.out.println("\n(2) " + IndustriaAutomobilistica.nomeclatura+"\n");
+        for(IndustriaAutomobilistica industriaAutomobilistica : industriasAutomobilisticas) {
             System.out.println("Index: "+contador+"| Indústria: "+industriaAutomobilistica.getNome());
             contador++;
         }
-        System.out.println("\n(3) " + industriaFarmaceutica.nomeclatura + "\n");
+        System.out.println("\n(3) " + IndustriaFarmaceutica.nomeclatura + "\n");
         contador = 0;
-        for (industriaFarmaceutica industriaFarmaceutica : industriasFarmaceuticas) {
+        for (IndustriaFarmaceutica industriaFarmaceutica : industriasFarmaceuticas) {
             System.out.println("Index: "+contador+"| Indústria: "+industriaFarmaceutica.getNome());
             contador++;
         }
@@ -211,9 +211,9 @@ public class aplicacao {
 
     public static void adicionarProduto(
         Scanner scanner,
-        ArrayList <industriaAlimenticia> industriasAlimenticias,
-        ArrayList <industriaAutomobilistica> industriasAutomobilisticas,
-        ArrayList <industriaFarmaceutica> industriasFarmaceuticas    
+        ArrayList <IndustriaAlimenticia> industriasAlimenticias,
+        ArrayList <IndustriaAutomobilistica> industriasAutomobilisticas,
+        ArrayList <IndustriaFarmaceutica> industriasFarmaceuticas    
     ) {
         System.out.print("\n\nInsira o número que vem antes do título das indústrias selecionado: ");
         int agrupamento = inputInt(scanner);
@@ -284,28 +284,28 @@ public class aplicacao {
     }
 
     public static void mostrarIndustriasProdutos(
-        ArrayList <industriaAlimenticia> industriasAlimenticias,
-        ArrayList <industriaAutomobilistica> industriasAutomobilisticas,
-        ArrayList <industriaFarmaceutica> industriasFarmaceuticas
+        ArrayList <IndustriaAlimenticia> industriasAlimenticias,
+        ArrayList <IndustriaAutomobilistica> industriasAutomobilisticas,
+        ArrayList <IndustriaFarmaceutica> industriasFarmaceuticas
     ) {
-        System.out.println("(1) " + industriaAlimenticia.nomeclatura + "\n");
-        for(industriaAlimenticia industriaAlimenticia : industriasAlimenticias) {
+        System.out.println("(1) " + IndustriaAlimenticia.nomeclatura + "\n");
+        for(IndustriaAlimenticia industriaAlimenticia : industriasAlimenticias) {
             System.out.println(industriaAlimenticia.getNome());
             for(int i=0;i<industriaAlimenticia.produtosAlimenticios.size();i++) {
                 System.out.println("    " + industriaAlimenticia.produtosAlimenticios.get(i).getNome());
             }
         }
 
-        System.out.println("\n(2) "+industriaAutomobilistica.nomeclatura+"\n");
-        for(industriaAutomobilistica industriaAutomobilistica : industriasAutomobilisticas) {
+        System.out.println("\n(2) "+IndustriaAutomobilistica.nomeclatura+"\n");
+        for(IndustriaAutomobilistica industriaAutomobilistica : industriasAutomobilisticas) {
             System.out.println(industriaAutomobilistica.getNome());
             for(int i=0;i<industriaAutomobilistica.produtosAutomobilisticos.size();i++) {
                 System.out.println("    " + industriaAutomobilistica.produtosAutomobilisticos.get(i).getNome());
             }
         }
-
-        System.out.println("\n(3) "+industriaFarmaceutica.nomeclatura+"\n");
-        for (industriaFarmaceutica industriaFarmaceutica : industriasFarmaceuticas) {
+        
+        System.out.println("\n(3) "+IndustriaFarmaceutica.nomeclatura+"\n");
+        for (IndustriaFarmaceutica industriaFarmaceutica : industriasFarmaceuticas) {
             System.out.println(industriaFarmaceutica.getNome());
             for(int i=0;i<industriaFarmaceutica.produtosFarmaceuticos.size();i++) {
                 System.out.println("    " + industriaFarmaceutica.produtosFarmaceuticos.get(i).getNome());

@@ -1,10 +1,10 @@
 package produtos;
 
-public class produtoAutomobilistico extends produto{
+public class ProdutoAutomobilistico extends Produto{
     private String modelo;
     private String marca;
 
-    public produtoAutomobilistico(
+    public ProdutoAutomobilistico(
         String nome,
         String descricao, 
         double preco, 

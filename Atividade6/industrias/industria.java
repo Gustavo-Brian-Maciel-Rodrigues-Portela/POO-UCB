@@ -1,6 +1,6 @@
 package industrias;
 
-public class industria {
+public class Industria {
     private String nome;
     private String endereco;
     private String cnpj;
@@ -9,7 +9,7 @@ public class industria {
     protected String nomeProduto; 
     private int anoFundacao;    
 
-    public industria(
+    public Industria(
         String nome, 
         String endereco, 
         String cnpj, 

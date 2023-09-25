@@ -1,14 +1,14 @@
 package industrias;
-import produtos.produtoFarmaceutico;
+import produtos.ProdutoFarmaceutico;
 import java.util.ArrayList;
 
-public class industriaFarmaceutica extends industria{
+public class IndustriaFarmaceutica extends Industria{
     private String especialidadeFarmaceutica;
     private boolean pesquisaEmAndamento;
-    public ArrayList<produtoFarmaceutico> produtosFarmaceuticos;
+    public ArrayList<ProdutoFarmaceutico> produtosFarmaceuticos;
     public final static String nomeclatura ="indústria Farmacêutica";
 
-    public industriaFarmaceutica(
+    public IndustriaFarmaceutica(
         String nome, 
         String endereco, 
         String cnpj, 
@@ -51,7 +51,7 @@ public class industriaFarmaceutica extends industria{
         String categoria,
         String fabricante
     ) {
-        produtosFarmaceuticos.add(new produtoFarmaceutico(
+        produtosFarmaceuticos.add(new ProdutoFarmaceutico(
             nome, 
             descricao, 
             preco, 

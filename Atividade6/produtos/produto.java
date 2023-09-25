@@ -1,7 +1,7 @@
 package produtos;
 import java.util.Objects;
 
-public class produto {
+public class Produto {
     protected String nome;
     protected String descricao;
     protected double preco;
@@ -9,7 +9,7 @@ public class produto {
     protected String categoria;
     protected String fabricante;
 
-    public produto(
+    public Produto(
         String nome,
         String descricao,
         double preco, 

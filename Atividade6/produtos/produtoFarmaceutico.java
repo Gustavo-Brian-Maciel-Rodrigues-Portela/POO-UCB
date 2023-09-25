@@ -1,11 +1,11 @@
 package produtos;
 
-public class produtoFarmaceutico extends produto{
+public class ProdutoFarmaceutico extends Produto{
     private String principioAtivo;
     private double Dosagem;
     private String formaFarmaceutica;
 
-    public produtoFarmaceutico(
+    public ProdutoFarmaceutico(
         String nome,
         String descricao, 
         double preco, 
